@@ -1,0 +1,82 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\Projects\material\.npmrc
+5 silly config load:file:C:\Users\九九\.npmrc
+6 silly config load:file:C:\Users\九九\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:D:\Projects\material\.npm-cache\_logs\2026-07-14T15_29_03_198Z-
+10 verbose logfile D:\Projects\material\.npm-cache\_logs\2026-07-14T15_29_03_198Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly reify mark retired [ 'D:\\Projects\\material\\node_modules\\cors_tmp_40724_2' ]
+15 silly reify mark retired [ 'D:\\Projects\\material\\node_modules\\express_tmp_40724_5' ]
+16 silly reify mark retired [ 'D:\\Projects\\material\\node_modules\\dotenv_tmp_40724_8' ]
+17 silly reify mark retired [ 'D:\\Projects\\material\\node_modules\\@ai-sdk\\openai_tmp_40724_1' ]
+18 silly reify moves {
+18 silly reify   'D:\\Projects\\material\\node_modules\\cors_tmp_40724_2': 'D:\\Projects\\material\\node_modules\\.cors_tmp_40724_2-VBIp3Fmi',
+18 silly reify   'D:\\Projects\\material\\node_modules\\express_tmp_40724_5': 'D:\\Projects\\material\\node_modules\\.express_tmp_40724_5-eX9b8u40',
+18 silly reify   'D:\\Projects\\material\\node_modules\\dotenv_tmp_40724_8': 'D:\\Projects\\material\\node_modules\\.dotenv_tmp_40724_8-THKZy0zk',
+18 silly reify   'D:\\Projects\\material\\node_modules\\@ai-sdk\\openai_tmp_40724_1': 'D:\\Projects\\material\\node_modules\\@ai-sdk\\.openai_tmp_40724_1-NrnvvSrZ'
+18 silly reify }
+19 http fetch GET 200 https://registry.npmjs.org/npm 1081ms
+20 warn cleanup Failed to remove some directories [
+20 warn cleanup   [
+20 warn cleanup     '\\\\?\\D:\\Projects\\material\\node_modules\\@ai-sdk\\react\\node_modules\\@ai-sdk',
+20 warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'D:\Projects\material\node_modules\@ai-sdk\react\node_modules\@ai-sdk'] {
+20 warn cleanup       errno: -4051,
+20 warn cleanup       code: 'ENOTEMPTY',
+20 warn cleanup       syscall: 'rmdir',
+20 warn cleanup       path: 'D:\\Projects\\material\\node_modules\\@ai-sdk\\react\\node_modules\\@ai-sdk'
+20 warn cleanup     }
+20 warn cleanup   ],
+20 warn cleanup   [
+20 warn cleanup     '\\\\?\\D:\\Projects\\material\\node_modules\\@ai-sdk\\ui-utils',
+20 warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'D:\Projects\material\node_modules\@ai-sdk\ui-utils'] {
+20 warn cleanup       errno: -4051,
+20 warn cleanup       code: 'ENOTEMPTY',
+20 warn cleanup       syscall: 'rmdir',
+20 warn cleanup       path: 'D:\\Projects\\material\\node_modules\\@ai-sdk\\ui-utils'
+20 warn cleanup     }
+20 warn cleanup   ],
+20 warn cleanup   [
+20 warn cleanup     '\\\\?\\D:\\Projects\\material\\node_modules\\@ai-sdk\\react',
+20 warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'D:\Projects\material\node_modules\@ai-sdk\react'] {
+20 warn cleanup       errno: -4051,
+20 warn cleanup       code: 'ENOTEMPTY',
+20 warn cleanup       syscall: 'rmdir',
+20 warn cleanup       path: 'D:\\Projects\\material\\node_modules\\@ai-sdk\\react'
+20 warn cleanup     }
+20 warn cleanup   ]
+20 warn cleanup ]
+21 verbose stack Error: ENOTDIR: not a directory, mkdir 'D:\Projects\material\node_modules\vite\node_modules'
+21 verbose stack     at async mkdir (node:internal/fs/promises:857:10)
+21 verbose stack     at async C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:624:20
+21 verbose stack     at async Promise.allSettled (index 368)
+21 verbose stack     at async [reifyPackages] (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:325:11)
+21 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:142:5)
+21 verbose stack     at async Install.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\install.js:150:5)
+21 verbose stack     at async Npm.exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:207:9)
+21 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:74:5)
+22 error code ENOTDIR
+23 error syscall mkdir
+24 error path D:\Projects\material\node_modules\vite\node_modules
+25 error errno -4052
+26 error ENOTDIR: not a directory, mkdir 'D:\Projects\material\node_modules\vite\node_modules'
+27 silly unfinished npm timer reify 1784042944347
+28 silly unfinished npm timer reify:createSparse 1784042944996
+29 verbose cwd D:\Projects\material
+30 verbose os Windows_NT 10.0.26200
+31 verbose node v22.14.0
+32 verbose npm  v10.9.2
+33 notice
+33 notice New major version of npm available! 10.9.2 -> 12.0.1
+33 notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.1
+33 notice To update run: npm install -g npm@12.0.1
+33 notice  { force: true, [Symbol(proc-log.meta)]: true }
+34 verbose exit -4052
+35 verbose code -4052
+36 error A complete log of this run can be found in: D:\Projects\material\.npm-cache\_logs\2026-07-14T15_29_03_198Z-debug-0.log
