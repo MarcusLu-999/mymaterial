@@ -147,7 +147,7 @@ describe('LocalDb Empirical Stress Tests & Edge Cases', () => {
 
     // db.read() should handle empty file and fall back to DEFAULT_DB
     const data = await db.read();
-    expect(data).toEqual({ project: null, bomItems: [] });
+    expect(data).toEqual({ project: null, bomItems: [], logs: [] });
 
     // Now verify what happens if we save project: does it overwrite the corrupted file with a valid structure?
     await db.saveProject({ projectId: 'NEW-PRJ', costCenter: 'CC-1', targetQty: 5 });
@@ -161,7 +161,7 @@ describe('LocalDb Empirical Stress Tests & Edge Cases', () => {
 
     // db.read() should catch error and return DEFAULT_DB
     const data = await db.read();
-    expect(data).toEqual({ project: null, bomItems: [] });
+    expect(data).toEqual({ project: null, bomItems: [], logs: [] });
   });
 
   it('should test invalid schema/missing keys in database file', async () => {
