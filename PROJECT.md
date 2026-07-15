@@ -49,9 +49,9 @@ graph TD
 ## Milestones
 | # | Name | Scope | Dependencies | Status | Conversation ID |
 |---|---|---|---|---|---|
-| 1 | Scaffolding & DB Setup | Complete package dependencies, TS configurations, and local JSON database schema & migrations. | None | IN_PROGRESS | 043ec946-c1b6-421d-a72a-00beddfac3f8 |
-| 2 | Backend APIs & Business Logic | Implement BOM parser, MASS sync logic, and OA export logic in backend with unit tests. | M1 | PLANNED | |
-| 3 | Frontend UI (3 Columns) | Construct glassmorphic dark-theme UI with Left Panel, Chat Window, and Kanban. | M1 | PLANNED | |
+| 1 | Scaffolding & DB Setup | Complete package dependencies, TS configurations, and local JSON database schema & migrations. | None | DONE | 043ec946-c1b6-421d-a72a-00beddfac3f8 |
+| 2 | Backend APIs & Business Logic | Implement BOM parser, MASS sync logic, and OA export logic in backend with unit tests. | M1 | IN_PROGRESS | 8d68ddad-dddb-4c7a-aab8-a8b07dd031c3 |
+| 3 | Frontend UI (3 Columns) | Construct glassmorphic dark-theme UI with Left Panel, Chat Window, and Kanban. | M1 | IN_PROGRESS | dbc24b0c-ec10-4457-b8b9-f67f46c1731f |
 | 4 | Conversational Agent & Vercel AI SDK | Integrate Vercel AI SDK, setup chat streaming, and implement Agent tools on backend. | M2, M3 | PLANNED | |
 | 5 | E2E Integration & Verification | E2E Testing Track integration, passing all tests, adversarial coverage hardening, and Forensic Audit. | M4, TEST_READY.md | PLANNED | |
 

@@ -25,14 +25,21 @@ export interface BomItem {
   riskLevel: 'Low' | 'Medium' | 'High';
 }
 
+export interface DbLog {
+  action: string;
+  timestamp: string;
+}
+
 export interface DbSchema {
   project: ProjectConfig | null;
   bomItems: BomItem[];
+  logs?: DbLog[];
 }
 
 const DEFAULT_DB: DbSchema = {
   project: null,
   bomItems: [],
+  logs: [],
 };
 
 export function createDefaultDb(): DbSchema {
@@ -151,6 +158,18 @@ export class LocalDb {
         );
       });
     }
+    if (!Array.isArray(data.logs)) {
+      data.logs = [];
+    } else {
+      data.logs = data.logs.filter((log: any) => {
+        return (
+          log &&
+          typeof log === 'object' &&
+          typeof log.action === 'string' &&
+          typeof log.timestamp === 'string'
+        );
+      });
+    }
 
     const validatedData = data as DbSchema;
     this.cache = deepClone(validatedData);
@@ -215,6 +234,33 @@ export class LocalDb {
     return this.runQueued(async () => {
       const data = await this.readInternal();
       data.bomItems = bomItems;
+      await this.writeInternal(data);
+    });
+  }
+
+  /**
+   * Gets all database logs.
+   */
+  async getLogs(): Promise<DbLog[]> {
+    return this.runQueued(async () => {
+      const data = await this.readInternal();
+      return data.logs || [];
+    });
+  }
+
+  /**
+   * Adds a new log entry.
+   */
+  async addLog(action: string): Promise<void> {
+    return this.runQueued(async () => {
+      const data = await this.readInternal();
+      if (!data.logs) {
+        data.logs = [];
+      }
+      data.logs.push({
+        action,
+        timestamp: new Date().toISOString()
+      });
       await this.writeInternal(data);
     });
   }
