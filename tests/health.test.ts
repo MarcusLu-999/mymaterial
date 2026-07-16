@@ -10,7 +10,8 @@ describe('Express Health Check API (/api/health)', () => {
   beforeAll(async () => {
     return new Promise((resolve, reject) => {
       // Start backend server in a child process
-      serverProcess = spawn('npx', ['tsx', 'server/index.ts'], {
+      const entryPath = path.resolve(process.cwd(), 'dist/server/index.js');
+      serverProcess = spawn('node', [entryPath], {
         env: { ...process.env, PORT: TEST_PORT.toString(), NODE_ENV: 'test' },
         shell: true
       });

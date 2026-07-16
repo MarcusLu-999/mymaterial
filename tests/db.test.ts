@@ -39,6 +39,35 @@ describe('Local JSON Database (LocalDb)', () => {
     expect(savedProject).toEqual(projectConfig);
   });
 
+  it('should save and retrieve project configuration with deadline', async () => {
+    const projectConfig: ProjectConfig = {
+      projectId: 'PRJ-2026-TEST',
+      costCenter: 'CC-TEST-01',
+      targetQty: 10,
+      deadline: '2026-08-01',
+    };
+
+    await testDb.saveProject(projectConfig);
+    const savedProject = await testDb.getProject();
+    expect(savedProject).toEqual(projectConfig);
+  });
+
+  it('should fail schema validation and return null if deadline is not a string', async () => {
+    const invalidDbData = {
+      project: {
+        projectId: 'PRJ-2026-TEST',
+        costCenter: 'CC-TEST-01',
+        targetQty: 10,
+        deadline: 12345,
+      },
+      bomItems: [],
+    };
+    await fs.writeFile(TEST_DB_PATH, JSON.stringify(invalidDbData, null, 2), 'utf-8');
+
+    const savedProject = await testDb.getProject();
+    expect(savedProject).toBeNull();
+  });
+
   it('should save and retrieve BOM items', async () => {
     const bomItems: BomItem[] = [
       {

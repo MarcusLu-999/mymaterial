@@ -12,6 +12,7 @@ export interface ProjectConfig {
   projectId: string;
   costCenter: string;
   targetQty: number;
+  deadline?: string;
 }
 
 export interface BomItem {
@@ -134,7 +135,8 @@ export class LocalDb {
         typeof data.project !== 'object' ||
         typeof data.project.projectId !== 'string' ||
         typeof data.project.costCenter !== 'string' ||
-        typeof data.project.targetQty !== 'number'
+        typeof data.project.targetQty !== 'number' ||
+        (data.project.deadline !== undefined && typeof data.project.deadline !== 'string')
       ) {
         data.project = null;
       }

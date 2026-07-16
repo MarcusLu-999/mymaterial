@@ -250,7 +250,7 @@ describe('LocalDb Empirical Stress Tests & Edge Cases', () => {
       }
     });
 
-    const server = app.listen(3126);
+    const server = app.listen(3127);
 
     // Mock database failure by mocking db.read to throw an error
     const originalRead = db.read;
@@ -259,7 +259,7 @@ describe('LocalDb Empirical Stress Tests & Edge Cases', () => {
     };
 
     try {
-      const res = await fetch('http://localhost:3126/api/health');
+      const res = await fetch('http://localhost:3127/api/health');
       expect(res.status).toBe(500);
       const body = await res.json();
       expect(body.status).toBe('error');
